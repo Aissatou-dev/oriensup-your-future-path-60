@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
+
 import { Pencil, Heart, Sparkles, Mail, GraduationCap } from "lucide-react";
 import { mockUser, etablissements } from "@/lib/mock-data";
 import { EtablissementCard } from "@/components/EtablissementCard";
