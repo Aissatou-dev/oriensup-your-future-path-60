@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { etablissements, temoignages } from "@/lib/mock-data";
+import { etablissements, temoignages, type Etablissement } from "@/lib/mock-data";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Star, Heart, GitCompare, Award, TrendingUp, Building2 } from "lucide-react";
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/etablissements/$id")({
 });
 
 function DetailPage() {
-  const { etab } = Route.useLoaderData();
+  const { etab } = Route.useLoaderData() as { etab: Etablissement };
   const [fav, setFav] = useState(false);
   const tems = temoignages.filter((t) => t.etablissement === etab.sigle);
 
