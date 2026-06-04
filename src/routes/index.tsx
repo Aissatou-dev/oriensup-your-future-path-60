@@ -57,7 +57,7 @@ function Index() {
 
           <div className="relative">
             <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=80" alt="Étudiants" className="size-full object-cover" />
+              <img src="https://www.ucad.sn/sites/default/files/5Q5A1426.jpg" alt="Étudiants sur le campus de l'UCAD à Dakar" className="size-full object-cover" />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-card border rounded-2xl shadow-xl p-4 flex items-center gap-3 max-w-xs">
               <div className="size-10 rounded-full bg-green-100 text-green-600 grid place-items-center">
