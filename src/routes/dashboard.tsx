@@ -59,4 +59,3 @@ function Dashboard() {
   );
 }
 
-export { Progress };
