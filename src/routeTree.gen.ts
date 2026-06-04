@@ -9,38 +9,168 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TemoignagesRouteImport } from './routes/temoignages'
+import { Route as QuizRouteImport } from './routes/quiz'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as ConnexionRouteImport } from './routes/connexion'
+import { Route as ComparaisonRouteImport } from './routes/comparaison'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as EtablissementsIndexRouteImport } from './routes/etablissements.index'
+import { Route as EtablissementsIdRouteImport } from './routes/etablissements.$id'
 
+const TemoignagesRoute = TemoignagesRouteImport.update({
+  id: '/temoignages',
+  path: '/temoignages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuizRoute = QuizRouteImport.update({
+  id: '/quiz',
+  path: '/quiz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConnexionRoute = ConnexionRouteImport.update({
+  id: '/connexion',
+  path: '/connexion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComparaisonRoute = ComparaisonRouteImport.update({
+  id: '/comparaison',
+  path: '/comparaison',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EtablissementsIndexRoute = EtablissementsIndexRouteImport.update({
+  id: '/etablissements/',
+  path: '/etablissements/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtablissementsIdRoute = EtablissementsIdRouteImport.update({
+  id: '/etablissements/$id',
+  path: '/etablissements/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/comparaison': typeof ComparaisonRoute
+  '/connexion': typeof ConnexionRoute
+  '/dashboard': typeof DashboardRoute
+  '/quiz': typeof QuizRoute
+  '/temoignages': typeof TemoignagesRoute
+  '/etablissements/$id': typeof EtablissementsIdRoute
+  '/etablissements/': typeof EtablissementsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/comparaison': typeof ComparaisonRoute
+  '/connexion': typeof ConnexionRoute
+  '/dashboard': typeof DashboardRoute
+  '/quiz': typeof QuizRoute
+  '/temoignages': typeof TemoignagesRoute
+  '/etablissements/$id': typeof EtablissementsIdRoute
+  '/etablissements': typeof EtablissementsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/comparaison': typeof ComparaisonRoute
+  '/connexion': typeof ConnexionRoute
+  '/dashboard': typeof DashboardRoute
+  '/quiz': typeof QuizRoute
+  '/temoignages': typeof TemoignagesRoute
+  '/etablissements/$id': typeof EtablissementsIdRoute
+  '/etablissements/': typeof EtablissementsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/comparaison'
+    | '/connexion'
+    | '/dashboard'
+    | '/quiz'
+    | '/temoignages'
+    | '/etablissements/$id'
+    | '/etablissements/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/comparaison'
+    | '/connexion'
+    | '/dashboard'
+    | '/quiz'
+    | '/temoignages'
+    | '/etablissements/$id'
+    | '/etablissements'
+  id:
+    | '__root__'
+    | '/'
+    | '/comparaison'
+    | '/connexion'
+    | '/dashboard'
+    | '/quiz'
+    | '/temoignages'
+    | '/etablissements/$id'
+    | '/etablissements/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ComparaisonRoute: typeof ComparaisonRoute
+  ConnexionRoute: typeof ConnexionRoute
+  DashboardRoute: typeof DashboardRoute
+  QuizRoute: typeof QuizRoute
+  TemoignagesRoute: typeof TemoignagesRoute
+  EtablissementsIdRoute: typeof EtablissementsIdRoute
+  EtablissementsIndexRoute: typeof EtablissementsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/temoignages': {
+      id: '/temoignages'
+      path: '/temoignages'
+      fullPath: '/temoignages'
+      preLoaderRoute: typeof TemoignagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quiz': {
+      id: '/quiz'
+      path: '/quiz'
+      fullPath: '/quiz'
+      preLoaderRoute: typeof QuizRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/connexion': {
+      id: '/connexion'
+      path: '/connexion'
+      fullPath: '/connexion'
+      preLoaderRoute: typeof ConnexionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comparaison': {
+      id: '/comparaison'
+      path: '/comparaison'
+      fullPath: '/comparaison'
+      preLoaderRoute: typeof ComparaisonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +178,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/etablissements/': {
+      id: '/etablissements/'
+      path: '/etablissements'
+      fullPath: '/etablissements/'
+      preLoaderRoute: typeof EtablissementsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etablissements/$id': {
+      id: '/etablissements/$id'
+      path: '/etablissements/$id'
+      fullPath: '/etablissements/$id'
+      preLoaderRoute: typeof EtablissementsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ComparaisonRoute: ComparaisonRoute,
+  ConnexionRoute: ConnexionRoute,
+  DashboardRoute: DashboardRoute,
+  QuizRoute: QuizRoute,
+  TemoignagesRoute: TemoignagesRoute,
+  EtablissementsIdRoute: EtablissementsIdRoute,
+  EtablissementsIndexRoute: EtablissementsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
