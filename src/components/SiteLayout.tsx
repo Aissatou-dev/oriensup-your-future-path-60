@@ -15,15 +15,16 @@ export function SiteLayout() {
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const navigate = useNavigate();
-  const { isAuth, logout } = useAuth();
+  const { isAuth, ready, logout } = useAuth();
 
   // Auth gate: redirect unauthenticated users to /connexion
   useEffect(() => {
-    if (!isAuth && pathname !== "/connexion") {
+    if (ready && !isAuth && pathname !== "/connexion") {
       navigate({ to: "/connexion" });
     }
-  }, [isAuth, pathname, navigate]);
+  }, [ready, isAuth, pathname, navigate]);
 
+  if (!ready) return null;
   if (!isAuth && pathname !== "/connexion") {
     return null;
   }
