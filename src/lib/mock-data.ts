@@ -150,6 +150,30 @@ export const etablissements: Etablissement[] = [
       "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&q=80",
     ],
   },
+  {
+    id: "esmt",
+    nom: "École Supérieure Multinationale des Télécommunications",
+    sigle: "ESMT",
+    ville: "Dakar",
+    type: "Public",
+    note: 4.4,
+    cout: "1 500 000 FCFA / an",
+    coutValue: 1500000,
+    description: "École panafricaine de référence en télécommunications et TIC.",
+    descriptionLongue:
+      "Créée en 1981, l'ESMT de Dakar est une école inter-États formant ingénieurs et techniciens supérieurs en télécommunications, réseaux et technologies de l'information pour toute l'Afrique francophone.",
+    image: "https://tse1.mm.bing.net/th/id/OIP.l65-rCdwNiWV3TjkQGVg-AHaFj?r=0&cb=thfvnextfalcon2&rs=1&pid=ImgDetMain&o=7&rm=3",
+    logo: "https://tse1.mm.bing.net/th/id/OIP.l65-rCdwNiWV3TjkQGVg-AHaFj?r=0&cb=thfvnextfalcon2&rs=1&pid=ImgDetMain&o=7&rm=3",
+    filieres: ["Télécommunications", "Réseaux", "Cybersécurité", "Génie Logiciel", "Data Science"],
+    accreditations: ["ANAQ-Sup", "CAMES"],
+    debouches: ["Ingénieur télécoms", "Ingénieur réseaux", "Expert cybersécurité", "Data engineer"],
+    tauxInsertion: 91,
+    domaines: ["Ingénierie", "Informatique", "Télécommunications"],
+    galerie: [
+      "https://tse1.mm.bing.net/th/id/OIP.l65-rCdwNiWV3TjkQGVg-AHaFj?r=0&cb=thfvnextfalcon2&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "https://edukiya.com/wp-content/uploads/2020/05/Ecole-Sup%C3%A9rieure-Multinationale-des-T%C3%A9l%C3%A9communications-ESMT-Dakar-etudes-au-senegal-orientation-bacheliers-3.jpg",
+    ],
+  },
 ];
 
 export const filieres = [

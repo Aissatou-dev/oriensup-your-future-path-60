@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { GraduationCap } from "lucide-react";
+import { useAuth } from "@/lib/auth";
 
 export const Route = createFileRoute("/connexion")({
   head: () => ({ meta: [{ title: "Connexion — OrienSup" }] }),
@@ -12,8 +13,10 @@ export const Route = createFileRoute("/connexion")({
 
 function ConnexionPage() {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
+    login();
     navigate({ to: "/dashboard" });
   };
 
