@@ -1,7 +1,8 @@
-import { Link, Outlet, useRouterState } from "@tanstack/react-router";
-import { GraduationCap, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { Link, Outlet, useNavigate, useRouterState } from "@tanstack/react-router";
+import { GraduationCap, Menu, X, LogOut } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/lib/auth";
 
 const navItems = [
   { to: "/", label: "Accueil" },
@@ -13,6 +14,33 @@ const navItems = [
 export function SiteLayout() {
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const navigate = useNavigate();
+  const { isAuth, logout } = useAuth();
+
+  // Auth gate: redirect unauthenticated users to /connexion
+  useEffect(() => {
+    if (!isAuth && pathname !== "/connexion") {
+      navigate({ to: "/connexion" });
+    }
+  }, [isAuth, pathname, navigate]);
+
+  if (!isAuth && pathname !== "/connexion") {
+    return null;
+  }
+
+  // Bare layout (no nav/footer) for the connexion page
+  if (pathname === "/connexion") {
+    return (
+      <div className="min-h-screen bg-background">
+        <Outlet />
+      </div>
+    );
+  }
+
+  const handleLogout = () => {
+    logout();
+    navigate({ to: "/connexion" });
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -43,12 +71,12 @@ export function SiteLayout() {
           </nav>
 
           <div className="hidden md:flex items-center gap-2">
-            <Link to="/connexion">
-              <Button variant="ghost" size="sm">Connexion</Button>
-            </Link>
             <Link to="/dashboard">
               <Button size="sm">Mon espace</Button>
             </Link>
+            <Button variant="ghost" size="sm" onClick={handleLogout} className="gap-1.5">
+              <LogOut className="size-4" /> Déconnexion
+            </Button>
           </div>
 
           <button className="md:hidden" onClick={() => setOpen(!open)} aria-label="Menu">
@@ -69,12 +97,12 @@ export function SiteLayout() {
                   {item.label}
                 </Link>
               ))}
-              <Link to="/connexion" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-sm">
-                Connexion
-              </Link>
               <Link to="/dashboard" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-sm font-medium text-primary">
                 Mon espace
               </Link>
+              <button onClick={() => { setOpen(false); handleLogout(); }} className="w-full text-left block px-3 py-2 rounded-md text-sm">
+                Déconnexion
+              </button>
             </div>
           </div>
         )}
