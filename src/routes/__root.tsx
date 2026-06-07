@@ -120,7 +120,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SiteLayout />
+      <AuthProvider>
+        <SiteLayout />
+      </AuthProvider>
     </QueryClientProvider>
   );
 }
