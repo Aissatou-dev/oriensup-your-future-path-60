@@ -60,15 +60,15 @@ export const etablissements: Etablissement[] = [
     description: "Plus grande université du Sénégal, pluridisciplinaire et historique.",
     descriptionLongue:
       "Fondée en 1957, l'UCAD accueille plus de 90 000 étudiants à travers ses facultés de lettres, sciences, médecine, droit et économie.",
-    image: "https://www.ucad.sn/sites/default/files/5Q5A1426.jpg",
-    logo: "https://www.ucad.sn/sites/default/files/5Q5A1426.jpg",
+    image: "https://lesoleil.sn/wp-content/uploads/2025/02/Ucad-bourse.webp",
+    logo: "https://lesoleil.sn/wp-content/uploads/2025/02/Ucad-bourse.webp",
     filieres: ["Droit", "Médecine", "Lettres modernes", "Mathématiques", "Économie"],
     accreditations: ["ANAQ-Sup", "CAMES"],
     debouches: ["Juriste", "Médecin", "Enseignant-chercheur", "Économiste"],
     tauxInsertion: 78,
     domaines: ["Droit", "Santé", "Lettres", "Sciences"],
     galerie: [
-      "https://www.ucad.sn/sites/default/files/5Q5A1426.jpg",
+      "https://lesoleil.sn/wp-content/uploads/2025/02/Ucad-bourse.webp",
       "https://www.ucad.sn/sites/default/files/BU_1.jpg",
       "https://www.ucad.sn/sites/default/files/Coope_1.jpg",
       "https://www.ucad.sn/sites/default/files/ENT.jpg",
