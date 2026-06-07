@@ -86,15 +86,15 @@ export const etablissements: Etablissement[] = [
     description: "École de management privée reconnue à l'international.",
     descriptionLongue:
       "L'ISM est l'une des plus grandes business schools d'Afrique francophone, avec des partenariats internationaux et un fort taux d'insertion.",
-    image: "https://www.groupeism.sn/sites/default/files/bean/image_homepage/desktop/header_hp_mini.jpg",
-    logo: "https://www.groupeism.sn/sites/default/files/bean/image_homepage/desktop/header_hp_mini.jpg",
+    image: "https://mlww83xuqy31.i.optimole.com/XIcTOMM-QOKP6I_f/w:auto/h:auto/q:auto/https://edukiya.com/wp-content/uploads/2020/05/ISM-Dakar-Senegal-nouveaux-bacheliers-2.jpg",
+    logo: "https://mlww83xuqy31.i.optimole.com/XIcTOMM-QOKP6I_f/w:auto/h:auto/q:auto/https://edukiya.com/wp-content/uploads/2020/05/ISM-Dakar-Senegal-nouveaux-bacheliers-2.jpg",
     filieres: ["Management", "Marketing Digital", "Finance", "Commerce International", "Communication"],
     accreditations: ["ANAQ-Sup", "AACSB partenaire"],
     debouches: ["Manager", "Chargé de marketing", "Analyste financier", "Entrepreneur"],
     tauxInsertion: 88,
     domaines: ["Commerce", "Communication"],
     galerie: [
-      "https://www.groupeism.sn/sites/default/files/bean/image_homepage/desktop/header_hp_mini.jpg",
+      "https://mlww83xuqy31.i.optimole.com/XIcTOMM-QOKP6I_f/w:auto/h:auto/q:auto/https://edukiya.com/wp-content/uploads/2020/05/ISM-Dakar-Senegal-nouveaux-bacheliers-2.jpg",
       "https://www.groupeism.sn/sites/default/files/image/campus/desktop/etudiant_0.jpg",
       "https://www.groupeism.sn/sites/default/files/styles/212x120/public/image/hot_content/news/miniature/ism_super_league_1.jpeg",
     ],
