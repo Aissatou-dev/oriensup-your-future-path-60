@@ -17,7 +17,7 @@ function ConnexionPage() {
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     login();
-    navigate({ to: "/dashboard" });
+    navigate({ to: "/" });
   };
 
   return (
