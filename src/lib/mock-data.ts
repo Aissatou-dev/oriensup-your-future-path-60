@@ -1,3 +1,15 @@
+import tAwa from "@/assets/t-awa.jpg";
+import tMamadou from "@/assets/t-mamadou.jpg";
+import tFatou from "@/assets/t-fatou.jpg";
+import tCheikh from "@/assets/t-cheikh.jpg";
+import tAissatou from "@/assets/t-aissatou.jpg";
+import tIbrahima from "@/assets/t-ibrahima.jpg";
+import tMariama from "@/assets/t-mariama.jpg";
+import tOusmane from "@/assets/t-ousmane.jpg";
+import tNafissatou from "@/assets/t-nafissatou.jpg";
+import tModou from "@/assets/t-modou.jpg";
+import tAminata from "@/assets/t-aminata.jpg";
+
 export type Etablissement = {
   id: string;
   nom: string;
