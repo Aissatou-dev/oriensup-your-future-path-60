@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, GraduationCap, Users, Building2, Star } from "lucide-react";
 import { etablissements, temoignages } from "@/lib/mock-data";
 import { EtablissementCard } from "@/components/EtablissementCard";
+import heroStudent from "@/assets/hero-student.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
