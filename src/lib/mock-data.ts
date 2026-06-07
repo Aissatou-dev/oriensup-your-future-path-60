@@ -204,25 +204,25 @@ export type Temoignage = {
   commentaire: string;
 };
 
-// Real portrait photos of young African / Black professionals (Unsplash)
+// Portraits générés représentant de jeunes professionnels sénégalais
 export const temoignages: Temoignage[] = [
-  { id: "1", nom: "Awa Diop", photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80", promotion: "Promo 2022", etablissement: "ESP", note: 5, commentaire: "Formation exigeante mais qui ouvre toutes les portes. J'ai été recrutée 2 mois avant la fin de mes études." },
-  { id: "2", nom: "Mamadou Sow", photo: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=300&q=80", promotion: "Promo 2021", etablissement: "ISM", note: 5, commentaire: "Le réseau alumni de l'ISM est exceptionnel. Les stages à l'international sont un vrai plus." },
-  { id: "3", nom: "Fatou Ndiaye", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&q=80", promotion: "Promo 2023", etablissement: "UCAD", note: 4, commentaire: "Une université historique avec une grande richesse intellectuelle. Les amphis sont chargés mais l'expérience est unique." },
-  { id: "4", nom: "Cheikh Fall", photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80", promotion: "Promo 2020", etablissement: "Supdeco", note: 5, commentaire: "Excellente école pour ceux qui visent le monde du commerce et de l'audit. Les profs sont des pros du terrain." },
-  { id: "5", nom: "Aissatou Ba", photo: "https://images.unsplash.com/photo-1521119989659-a83eee488004?w=300&q=80", promotion: "Promo 2022", etablissement: "IAM", note: 4, commentaire: "Très bonne formation en entrepreneuriat. J'ai lancé ma startup grâce à l'incubateur de l'école." },
-  { id: "6", nom: "Ibrahima Sy", photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=300&q=80", promotion: "Promo 2023", etablissement: "ESP", note: 5, commentaire: "Les projets pratiques en génie logiciel m'ont préparé directement au métier de développeur." },
-  { id: "7", nom: "Mariama Diallo", photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&q=80", promotion: "Promo 2021", etablissement: "ISM", note: 4, commentaire: "Cadre d'études moderne et beaucoup d'opportunités de networking." },
-  { id: "8", nom: "Ousmane Kane", photo: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=300&q=80", promotion: "Promo 2019", etablissement: "UCAD", note: 4, commentaire: "Faculté de droit très réputée. Les enseignants chercheurs apportent une vraie profondeur." },
-  { id: "9", nom: "Nafissatou Thiam", photo: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=300&q=80", promotion: "Promo 2022", etablissement: "Supdeco", note: 5, commentaire: "J'ai été embauchée avant même de soutenir mon mémoire. Merci Supdeco !" },
-  { id: "10", nom: "Modou Gueye", photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&q=80", promotion: "Promo 2023", etablissement: "IAM", note: 4, commentaire: "L'approche pratique du programme MBA m'a beaucoup apporté professionnellement." },
+  { id: "1", nom: "Awa Diop", photo: tAwa, promotion: "Promo 2022", etablissement: "ESP", note: 5, commentaire: "Formation exigeante mais qui ouvre toutes les portes. J'ai été recrutée 2 mois avant la fin de mes études." },
+  { id: "2", nom: "Mamadou Sow", photo: tMamadou, promotion: "Promo 2021", etablissement: "ISM", note: 5, commentaire: "Le réseau alumni de l'ISM est exceptionnel. Les stages à l'international sont un vrai plus." },
+  { id: "3", nom: "Fatou Ndiaye", photo: tFatou, promotion: "Promo 2023", etablissement: "UCAD", note: 4, commentaire: "Une université historique avec une grande richesse intellectuelle. Les amphis sont chargés mais l'expérience est unique." },
+  { id: "4", nom: "Cheikh Fall", photo: tCheikh, promotion: "Promo 2020", etablissement: "Supdeco", note: 5, commentaire: "Excellente école pour ceux qui visent le monde du commerce et de l'audit. Les profs sont des pros du terrain." },
+  { id: "5", nom: "Aissatou Ba", photo: tAissatou, promotion: "Promo 2022", etablissement: "IAM", note: 4, commentaire: "Très bonne formation en entrepreneuriat. J'ai lancé ma startup grâce à l'incubateur de l'école." },
+  { id: "6", nom: "Ibrahima Sy", photo: tIbrahima, promotion: "Promo 2023", etablissement: "ESP", note: 5, commentaire: "Les projets pratiques en génie logiciel m'ont préparé directement au métier de développeur." },
+  { id: "7", nom: "Mariama Diallo", photo: tMariama, promotion: "Promo 2021", etablissement: "ISM", note: 4, commentaire: "Cadre d'études moderne et beaucoup d'opportunités de networking." },
+  { id: "8", nom: "Ousmane Kane", photo: tOusmane, promotion: "Promo 2019", etablissement: "UCAD", note: 4, commentaire: "Faculté de droit très réputée. Les enseignants chercheurs apportent une vraie profondeur." },
+  { id: "9", nom: "Nafissatou Thiam", photo: tNafissatou, promotion: "Promo 2022", etablissement: "Supdeco", note: 5, commentaire: "J'ai été embauchée avant même de soutenir mon mémoire. Merci Supdeco !" },
+  { id: "10", nom: "Modou Gueye", photo: tModou, promotion: "Promo 2023", etablissement: "IAM", note: 4, commentaire: "L'approche pratique du programme MBA m'a beaucoup apporté professionnellement." },
 ];
 
 export const mockUser = {
   nom: "Aminata Sarr",
   email: "aminata.sarr@oriensup.sn",
   serieBac: "S2",
-  photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&q=80",
+  photo: tAminata,
   quizResult: {
     filiere: "Génie Logiciel",
     compatibilite: 92,
