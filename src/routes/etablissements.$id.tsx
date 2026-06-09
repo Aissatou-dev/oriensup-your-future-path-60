@@ -1,8 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { etablissements, temoignages, type Etablissement } from "@/lib/mock-data";
+import { etablissements, temoignages, filiereDetails, type Etablissement } from "@/lib/mock-data";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Star, Heart, GitCompare, Award, TrendingUp, Building2 } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { MapPin, Star, Heart, GitCompare, Award, TrendingUp, Building2, ChevronRight, Briefcase } from "lucide-react";
 import { useState } from "react";
 
 export const Route = createFileRoute("/etablissements/$id")({
@@ -27,6 +28,8 @@ export const Route = createFileRoute("/etablissements/$id")({
 function DetailPage() {
   const { etab } = Route.useLoaderData() as { etab: Etablissement };
   const [fav, setFav] = useState(false);
+  const [openFiliere, setOpenFiliere] = useState<string | null>(null);
+  const filiereInfo = openFiliere ? filiereDetails[openFiliere] : null;
   const tems = temoignages.filter((t) => t.etablissement === etab.sigle);
 
   return (
@@ -71,22 +74,23 @@ function DetailPage() {
 
           <section>
             <h2 className="text-xl font-bold mb-4">Filières proposées</h2>
+            <p className="text-sm text-muted-foreground mb-3">Cliquez sur une filière pour découvrir son contenu et ses débouchés.</p>
             <div className="grid sm:grid-cols-2 gap-3">
               {etab.filieres.map((f) => (
-                <div key={f} className="flex items-center gap-3 p-4 rounded-xl border bg-card">
+                <button
+                  type="button"
+                  key={f}
+                  onClick={() => setOpenFiliere(f)}
+                  className="flex items-center gap-3 p-4 rounded-xl border bg-card text-left hover:border-primary hover:shadow-md transition-all group"
+                >
                   <div className="size-9 rounded-lg bg-primary/10 text-primary grid place-items-center"><Building2 className="size-4" /></div>
-                  <span className="font-medium text-sm">{f}</span>
-                </div>
+                  <span className="font-medium text-sm flex-1">{f}</span>
+                  <ChevronRight className="size-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                </button>
               ))}
             </div>
           </section>
 
-          <section>
-            <h2 className="text-xl font-bold mb-4">Débouchés</h2>
-            <div className="flex flex-wrap gap-2">
-              {etab.debouches.map((d) => <Badge key={d} variant="secondary" className="px-3 py-1">{d}</Badge>)}
-            </div>
-          </section>
 
           <section>
             <h2 className="text-xl font-bold mb-4">Galerie</h2>
@@ -143,6 +147,36 @@ function DetailPage() {
           </div>
         </aside>
       </div>
+
+      <Dialog open={!!openFiliere} onOpenChange={(o) => !o && setOpenFiliere(null)}>
+        <DialogContent className="max-w-lg">
+          <DialogHeader>
+            <DialogTitle className="text-2xl">{openFiliere}</DialogTitle>
+            <DialogDescription className="sr-only">Détails de la filière</DialogDescription>
+          </DialogHeader>
+          {filiereInfo ? (
+            <div className="space-y-5">
+              <div>
+                <h4 className="text-sm font-semibold mb-2 text-primary">À propos de la filière</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">{filiereInfo.description}</p>
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold mb-2 text-primary flex items-center gap-2"><Briefcase className="size-4" />Débouchés professionnels</h4>
+                <div className="flex flex-wrap gap-2">
+                  {filiereInfo.debouches.map((d) => (
+                    <Badge key={d} variant="secondary" className="px-3 py-1">{d}</Badge>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <p className="text-sm text-muted-foreground">
+              Informations détaillées non disponibles pour cette filière.
+            </p>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
+
