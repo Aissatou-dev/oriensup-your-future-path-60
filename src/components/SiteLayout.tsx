@@ -157,6 +157,7 @@ export function SiteLayout() {
           © 2026 OrienSup — Projet universitaire
         </div>
       </footer>
+      <Toaster />
     </div>
   );
 }
