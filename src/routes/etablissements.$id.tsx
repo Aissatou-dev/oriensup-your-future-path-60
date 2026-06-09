@@ -1,8 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { etablissements, temoignages, type Etablissement } from "@/lib/mock-data";
+import { etablissements, temoignages, filiereDetails, type Etablissement } from "@/lib/mock-data";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Star, Heart, GitCompare, Award, TrendingUp, Building2 } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { MapPin, Star, Heart, GitCompare, Award, TrendingUp, Building2, ChevronRight, Briefcase } from "lucide-react";
 import { useState } from "react";
 
 export const Route = createFileRoute("/etablissements/$id")({
