@@ -147,6 +147,36 @@ function DetailPage() {
           </div>
         </aside>
       </div>
+
+      <Dialog open={!!openFiliere} onOpenChange={(o) => !o && setOpenFiliere(null)}>
+        <DialogContent className="max-w-lg">
+          <DialogHeader>
+            <DialogTitle className="text-2xl">{openFiliere}</DialogTitle>
+            <DialogDescription className="sr-only">Détails de la filière</DialogDescription>
+          </DialogHeader>
+          {filiereInfo ? (
+            <div className="space-y-5">
+              <div>
+                <h4 className="text-sm font-semibold mb-2 text-primary">À propos de la filière</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">{filiereInfo.description}</p>
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold mb-2 text-primary flex items-center gap-2"><Briefcase className="size-4" />Débouchés professionnels</h4>
+                <div className="flex flex-wrap gap-2">
+                  {filiereInfo.debouches.map((d) => (
+                    <Badge key={d} variant="secondary" className="px-3 py-1">{d}</Badge>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <p className="text-sm text-muted-foreground">
+              Informations détaillées non disponibles pour cette filière.
+            </p>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
+
