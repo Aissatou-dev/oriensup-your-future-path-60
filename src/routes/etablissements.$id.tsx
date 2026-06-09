@@ -74,22 +74,23 @@ function DetailPage() {
 
           <section>
             <h2 className="text-xl font-bold mb-4">Filières proposées</h2>
+            <p className="text-sm text-muted-foreground mb-3">Cliquez sur une filière pour découvrir son contenu et ses débouchés.</p>
             <div className="grid sm:grid-cols-2 gap-3">
               {etab.filieres.map((f) => (
-                <div key={f} className="flex items-center gap-3 p-4 rounded-xl border bg-card">
+                <button
+                  type="button"
+                  key={f}
+                  onClick={() => setOpenFiliere(f)}
+                  className="flex items-center gap-3 p-4 rounded-xl border bg-card text-left hover:border-primary hover:shadow-md transition-all group"
+                >
                   <div className="size-9 rounded-lg bg-primary/10 text-primary grid place-items-center"><Building2 className="size-4" /></div>
-                  <span className="font-medium text-sm">{f}</span>
-                </div>
+                  <span className="font-medium text-sm flex-1">{f}</span>
+                  <ChevronRight className="size-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                </button>
               ))}
             </div>
           </section>
 
-          <section>
-            <h2 className="text-xl font-bold mb-4">Débouchés</h2>
-            <div className="flex flex-wrap gap-2">
-              {etab.debouches.map((d) => <Badge key={d} variant="secondary" className="px-3 py-1">{d}</Badge>)}
-            </div>
-          </section>
 
           <section>
             <h2 className="text-xl font-bold mb-4">Galerie</h2>
