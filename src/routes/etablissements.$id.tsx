@@ -28,6 +28,8 @@ export const Route = createFileRoute("/etablissements/$id")({
 function DetailPage() {
   const { etab } = Route.useLoaderData() as { etab: Etablissement };
   const [fav, setFav] = useState(false);
+  const [openFiliere, setOpenFiliere] = useState<string | null>(null);
+  const filiereInfo = openFiliere ? filiereDetails[openFiliere] : null;
   const tems = temoignages.filter((t) => t.etablissement === etab.sigle);
 
   return (
